@@ -1,0 +1,94 @@
+/* ===========================================
+   OptionChip Component Styles
+   =========================================== */
+
+.option-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-crt-glow);
+  border: 3px solid var(--color-border);
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-primary);
+  animation: chipEnter 0.3s ease-out backwards;
+  transition: all var(--transition-fast);
+}
+
+@keyframes chipEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.option-chip:hover {
+  border-color: var(--color-neon-cyan);
+  background: var(--color-crt-dark);
+}
+
+.option-chip__label {
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.option-chip__remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 2px solid var(--color-text-muted);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  line-height: 1;
+  padding: 0;
+}
+
+.option-chip__remove:hover {
+  background: var(--color-neon-pink);
+  border-color: var(--color-neon-pink);
+  color: var(--color-crt-black);
+}
+
+/* ===== STATES ===== */
+
+.option-chip--highlighted {
+  border-color: var(--color-neon-yellow);
+  background: var(--color-neon-yellow);
+  color: var(--color-crt-black);
+  transform: scale(1.05);
+  box-shadow: var(--glow-yellow);
+}
+
+.option-chip--highlighted .option-chip__remove {
+  display: none;
+}
+
+.option-chip--selected {
+  border-color: var(--color-neon-green);
+  background: var(--color-neon-green);
+  color: var(--color-crt-black);
+  transform: scale(1.1);
+  box-shadow: var(--glow-green);
+  animation: selectedPulse 0.5s ease-out;
+}
+
+@keyframes selectedPulse {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+.option-chip--selected .option-chip__remove {
+  display: none;
+}

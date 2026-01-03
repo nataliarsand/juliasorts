@@ -1,0 +1,393 @@
+/* ===========================================
+   Julia Sorts - Main App Styles
+   90s Arcade Gaming Aesthetic
+   =========================================== */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ===== BACKGROUND EFFECTS ===== */
+
+.app__bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(5, 217, 232, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 217, 232, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.app__bg-glow {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at 30% 20%,
+    rgba(255, 42, 109, 0.1) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    ellipse at 70% 80%,
+    rgba(5, 217, 232, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+  z-index: -1;
+  animation: glowPulse 8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+/* ===== MAIN LAYOUT ===== */
+
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+}
+
+/* ===== HEADER ===== */
+
+.app__header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.app__title {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.app__title-julia {
+  color: var(--color-neon-pink);
+  text-shadow: var(--glow-pink);
+  animation: titleFloat 3s ease-in-out infinite;
+}
+
+.app__title-sorts {
+  color: var(--color-neon-cyan);
+  text-shadow: var(--glow-cyan);
+  animation: titleFloat 3s ease-in-out infinite 0.5s;
+}
+
+@keyframes titleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.app__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ===== CONTENT ===== */
+
+.app__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  flex: 1;
+}
+
+/* ===== SPINNER SECTION ===== */
+
+.app__spinner-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  scroll-margin-top: var(--space-4);
+}
+
+/* ===== SORTING LABEL ===== */
+
+.app__sorting-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-align: center;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-crt-dark);
+  border: 3px solid var(--color-border);
+  max-width: 100%;
+}
+
+.app__sorting-prefix {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.app__sorting-options {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-neon-yellow);
+  text-shadow: 0 0 10px var(--color-neon-yellow);
+  text-transform: uppercase;
+  word-break: break-word;
+}
+
+.app__change-btn {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-neon-cyan);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  transition: all var(--transition-fast);
+  text-transform: lowercase;
+}
+
+.app__change-btn:hover {
+  color: var(--color-neon-pink);
+  text-shadow: var(--text-glow-pink);
+}
+
+.app__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+/* ===== OPTIONS SECTION ===== */
+
+.app__options-section {
+  background: rgba(26, 26, 46, 0.5);
+  border: 4px solid var(--color-border);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  scroll-margin-top: var(--space-4);
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.app__options-section--editing {
+  border-color: var(--color-neon-cyan);
+  box-shadow: 0 0 20px rgba(5, 217, 232, 0.2);
+}
+
+.app__section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.app__section-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.app__section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  color: var(--color-neon-cyan);
+  text-shadow: var(--text-glow-cyan);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+}
+
+/* ===== CHIPS CONTAINER ===== */
+
+.app__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-crt-black);
+  border: 2px dashed var(--color-border);
+  min-height: 80px;
+}
+
+/* ===== EMPTY STATE ===== */
+
+.app__empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  background: var(--color-crt-black);
+  border: 2px dashed var(--color-border);
+  min-height: 100px;
+}
+
+.app__empty-state p {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ===== QUICK PICKS ===== */
+
+.app__quick-picks {
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.app__quick-picks-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-3);
+}
+
+.app__quick-picks-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ===== GAME MENU CONTENT ===== */
+
+.menu-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-crt-dark);
+  border: 2px dashed var(--color-border);
+  min-height: 60px;
+}
+
+.menu-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: var(--color-crt-dark);
+  border: 2px dashed var(--color-border);
+}
+
+.menu-empty p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.menu-quick-picks {
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.menu-quick-picks__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  margin-bottom: var(--space-3);
+}
+
+.menu-quick-picks__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.menu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  border-top: 2px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin-top: auto;
+}
+
+/* ===== FOOTER ===== */
+
+.app__footer {
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  margin-top: auto;
+}
+
+.app__footer p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+}
+
+.app__footer-heart {
+  color: var(--color-neon-pink);
+  animation: heartbeat 1s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+  .app__main {
+    padding: var(--space-4) var(--space-3);
+  }
+
+  .app__title {
+    font-size: var(--text-2xl);
+  }
+
+  .app__subtitle {
+    font-size: var(--text-base);
+  }
+
+  .app__options-section {
+    padding: var(--space-4);
+  }
+
+  .app__section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

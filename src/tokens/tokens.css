@@ -1,0 +1,142 @@
+/* ===========================================
+   JULIA SORTS - Design Tokens
+   90s Arcade Gaming Aesthetic
+   =========================================== */
+
+:root {
+  /* ===== COLOR PALETTE ===== */
+
+  /* Primary CRT Colors */
+  --color-crt-black: #0a0a0c;
+  --color-crt-dark: #12121a;
+  --color-crt-glow: #1a1a2e;
+
+  /* Neon Arcade Colors */
+  --color-neon-pink: #ff2a6d;
+  --color-neon-cyan: #05d9e8;
+  --color-neon-green: #39ff14;
+  --color-neon-yellow: #ffd700;
+  --color-neon-purple: #9d4edd;
+  --color-neon-orange: #ff6b35;
+
+  /* Phosphor Screen Colors */
+  --color-phosphor-green: #33ff33;
+  --color-phosphor-amber: #ffb000;
+
+  /* UI Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b8b8d0;
+  --color-text-muted: #6b6b8a;
+  --color-border: #2a2a4a;
+  --color-border-glow: rgba(5, 217, 232, 0.3);
+
+  /* Semantic Colors */
+  --color-success: var(--color-neon-green);
+  --color-warning: var(--color-neon-yellow);
+  --color-error: var(--color-neon-pink);
+  --color-info: var(--color-neon-cyan);
+
+  /* ===== TYPOGRAPHY ===== */
+
+  /* Font Families - Using chunky, pixel-inspired fonts */
+  --font-display: 'Press Start 2P', 'VT323', monospace;
+  --font-body: 'VT323', 'Courier New', monospace;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Font Sizes - 8-bit scale */
+  --text-xs: 0.625rem;    /* 10px */
+  --text-sm: 0.75rem;     /* 12px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 2rem;       /* 32px */
+  --text-3xl: 2.5rem;     /* 40px */
+  --text-4xl: 3rem;       /* 48px */
+  --text-5xl: 4rem;       /* 64px */
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+  /* Letter Spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+
+  /* ===== SPACING ===== */
+
+  /* 8px base grid system */
+  --space-1: 0.25rem;     /* 4px */
+  --space-2: 0.5rem;      /* 8px */
+  --space-3: 0.75rem;     /* 12px */
+  --space-4: 1rem;        /* 16px */
+  --space-5: 1.5rem;      /* 24px */
+  --space-6: 2rem;        /* 32px */
+  --space-8: 3rem;        /* 48px */
+  --space-10: 4rem;       /* 64px */
+  --space-12: 6rem;       /* 96px */
+  --space-16: 8rem;       /* 128px */
+
+  /* ===== BORDERS & RADIUS ===== */
+
+  /* Pixel-perfect borders */
+  --border-width-thin: 2px;
+  --border-width-medium: 4px;
+  --border-width-thick: 6px;
+
+  /* Sharp, 90s-style corners */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-pixel: 0; /* Keep it sharp! */
+
+  /* ===== SHADOWS & GLOWS ===== */
+
+  /* Neon Glow Effects */
+  --glow-pink: 0 0 10px var(--color-neon-pink), 0 0 20px var(--color-neon-pink), 0 0 40px var(--color-neon-pink);
+  --glow-cyan: 0 0 10px var(--color-neon-cyan), 0 0 20px var(--color-neon-cyan), 0 0 40px var(--color-neon-cyan);
+  --glow-green: 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var(--color-neon-green);
+  --glow-yellow: 0 0 10px var(--color-neon-yellow), 0 0 20px var(--color-neon-yellow), 0 0 40px var(--color-neon-yellow);
+
+  /* Text Glows */
+  --text-glow-cyan: 0 0 5px var(--color-neon-cyan), 0 0 10px var(--color-neon-cyan);
+  --text-glow-pink: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink);
+  --text-glow-green: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green);
+
+  /* Box Shadows */
+  --shadow-pixel: 4px 4px 0 var(--color-crt-black);
+  --shadow-pixel-lg: 6px 6px 0 var(--color-crt-black);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+
+  /* ===== TRANSITIONS ===== */
+
+  --transition-fast: 100ms ease-out;
+  --transition-normal: 200ms ease-out;
+  --transition-slow: 400ms ease-out;
+  --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ===== Z-INDEX SCALE ===== */
+
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-overlay: 400;
+  --z-toast: 500;
+
+  /* ===== CRT EFFECT VALUES ===== */
+
+  --scanline-opacity: 0.08;
+  --crt-curve: 2px;
+  --flicker-intensity: 0.02;
+}
+
+/* Dark mode is the only mode - it's always arcade night */
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Override nothing - keep the dark arcade vibe */
+  }
+}
