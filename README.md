@@ -1,16 +1,61 @@
-# React + Vite
+# JULIA SORTS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+```
+     ██╗██╗   ██╗██╗     ██╗ █████╗
+     ██║██║   ██║██║     ██║██╔══██╗
+     ██║██║   ██║██║     ██║███████║
+██   ██║██║   ██║██║     ██║██╔══██║
+╚█████╔╝╚██████╔╝███████╗██║██║  ██║
+ ╚════╝  ╚═════╝ ╚══════╝╚═╝╚═╝  ╚═╝
+        S O R T S
+```
 
-Currently, two official plugins are available:
+> *"Pizza or sushi? Movie or game night? WHO KNOWS?!"*
+>
+> — Julia, probably
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What is this?
 
-## React Compiler
+Can't decide what to eat? Where to go? Which board game to play? **Let fate decide for you.**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+JuliaSorts is a gloriously over-engineered random picker with a 90s arcade aesthetic. Because making decisions is hard, but pressing a big glowing button is easy.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Neon-soaked UI** — Your eyes will thank you (or curse you)
+- **Dramatic spinning animation** — Maximum suspense for maximum fun
+- **Quick picks** — Pre-loaded options for the truly indecisive
+- **Up to 5 options** — Because more than that is just chaos
+- **Zero AI, 100% random** — Pure, unbiased chaos
+
+## Quick Start
+
+```bash
+npm install
+npm run dev
+```
+
+Then open your browser and let the sorting begin.
+
+## How to Use
+
+1. Add your options (or pick a quick category)
+2. Smash that **SORT IT!** button
+3. Accept your fate
+4. (Optional) Argue with the result and sort again
+
+## Tech Stack
+
+- React
+- Vite
+- Vibes
+
+## Why "JuliaSorts"?
+
+Because Julia couldn't decide, so we built an app.
+
+Now nobody has to decide. The computer overlords choose for us all.
+
+---
+
+*Built with indecision and love*
