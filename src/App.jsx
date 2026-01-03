@@ -18,11 +18,16 @@ function App() {
 
   // Format options for display: "Yes vs No" or "A vs B vs C"
   const optionsDisplay = options.length > 0
-    ? options.join(' vs ')
+    ? options.map((opt, i) => (
+        <span key={opt}>
+          {opt}
+          {i < options.length - 1 && <span className="app__vs"> vs </span>}
+        </span>
+      ))
     : 'No options yet';
 
   const addOption = useCallback((option) => {
-    if (option && !options.includes(option)) {
+    if (option && !options.includes(option) && options.length < 5) {
       setOptions((prev) => [...prev, option]);
       setResult(null);
     }

@@ -154,6 +154,11 @@
   word-break: break-word;
 }
 
+.app__vs {
+  color: var(--color-text-muted);
+  text-shadow: none;
+}
+
 .app__change-btn {
   font-family: var(--font-body);
   font-size: var(--text-base);
