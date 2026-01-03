@@ -5,7 +5,7 @@ import './App.css';
 // Suggested quick-pick categories for inspiration
 const QUICK_PICKS = [
   { label: 'FOOD', options: ['Pizza', 'Sushi', 'Tacos', 'Burger'] },
-  { label: 'ACTIVITY', options: ['Movie', 'Game Night', 'Walk', 'Netflix'] },
+  { label: 'ACTIVITY', options: ['Movie', 'Board game', 'Go outside', 'Video game'] },
   { label: 'BOARD GAME', options: ['Catan', 'Carcassonne', 'Ticket to Ride', 'Codenames'] },
 ];
 
