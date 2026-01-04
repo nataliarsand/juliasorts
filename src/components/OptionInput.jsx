@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './OptionInput.css';
 
+const sanitize = (str) => str.replace(/<[^>]*>/g, '');
+
 /**
  * OptionInput - Retro-styled input for adding options
  * @param {Object} props
@@ -13,8 +15,9 @@ export function OptionInput({ onAdd, placeholder = 'Type an option...', disabled
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value.trim() && onAdd) {
-      onAdd(value.trim());
+    const sanitized = sanitize(value.trim());
+    if (sanitized && onAdd) {
+      onAdd(sanitized);
       setValue('');
     }
   };
