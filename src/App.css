@@ -80,7 +80,7 @@
   font-size: var(--text-base);
   color: var(--color-text-secondary);
   letter-spacing: var(--tracking-wide);
-  margin-top: -0.3rem;
+  margin-top: -1rem;
 }
 
 /* ===== CONTENT ===== */
