@@ -70,7 +70,7 @@
 }
 
 .app__logo {
-  max-width: 400px;
+  max-width: 260px;
   width: 100%;
   height: auto;
 }
@@ -80,7 +80,7 @@
   font-size: var(--text-base);
   color: var(--color-text-secondary);
   letter-spacing: var(--tracking-wide);
-  margin-top: -1rem;
+  margin-top: -0.3rem;
 }
 
 /* ===== CONTENT ===== */
