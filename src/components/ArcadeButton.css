@@ -38,26 +38,26 @@
 
 /* ===== VARIANTS ===== */
 
-/* Primary - Neon Cyan */
+/* Primary - Neon Pink */
 .arcade-button--primary .arcade-button__face {
-  background: var(--color-neon-cyan);
+  background: var(--color-neon-pink);
   color: var(--color-crt-black);
 }
 
 .arcade-button--primary:hover:not(:disabled) .arcade-button__face {
   filter: brightness(1.1);
-  box-shadow: 4px 4px 0 var(--color-crt-black), 0 0 20px var(--color-neon-cyan);
+  box-shadow: 4px 4px 0 var(--color-crt-black), 0 0 20px var(--color-neon-pink);
 }
 
-/* Secondary - Neon Pink */
+/* Secondary - Neon Cyan */
 .arcade-button--secondary .arcade-button__face {
-  background: var(--color-neon-pink);
+  background: var(--color-neon-cyan);
   color: var(--color-crt-black);
 }
 
 .arcade-button--secondary:hover:not(:disabled) .arcade-button__face {
   filter: brightness(1.1);
-  box-shadow: 4px 4px 0 var(--color-crt-black), 0 0 20px var(--color-neon-pink);
+  box-shadow: 4px 4px 0 var(--color-crt-black), 0 0 20px var(--color-neon-cyan);
 }
 
 /* Danger - Neon Orange */

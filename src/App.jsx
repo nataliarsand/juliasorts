@@ -7,6 +7,7 @@ const QUICK_PICKS = [
   { label: 'FOOD', options: ['Pizza', 'Sushi', 'Tacos', 'Burger'] },
   { label: 'ACTIVITY', options: ['Movie', 'Board game', 'Go outside', 'Video game'] },
   { label: 'BOARD GAME', options: ['Catan', 'Carcassonne', 'Ticket to Ride', 'Codenames'] },
+  { label: 'DINNER', options: ['Cook', 'Takeaway'] },
 ];
 
 function App() {
@@ -97,10 +98,12 @@ function App() {
       <main className="app__main">
         {/* Header */}
         <header className="app__header">
-          <h1 className="app__title">
-            <span className="app__title-julia">Julia</span>
-            <span className="app__title-sorts">Sorts</span>
-          </h1>
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo.png`}
+            srcSet={`${import.meta.env.BASE_URL}images/logo.png 1x, ${import.meta.env.BASE_URL}images/logo@2x.png 2x`}
+            alt="Julia Sorts"
+            className="app__logo"
+          />
           <p className="app__subtitle">
             Can&apos;t decide? Let fate choose for you!
           </p>
