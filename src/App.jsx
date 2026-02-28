@@ -156,6 +156,10 @@ function App() {
         </footer>
       </main>
 
+      <a href="https://www.paypal.com/donate/?hosted_button_id=EVJDVWMAHYA2C" className="coffee-link" target="_blank" rel="noopener noreferrer">
+        Buy me a coffee &#9749;
+      </a>
+
       {/* Options Menu */}
       <GameMenu
         isOpen={isMenuOpen}

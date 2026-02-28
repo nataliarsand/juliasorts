@@ -339,9 +339,47 @@
   50% { transform: scale(1.2); }
 }
 
+/* ===== COFFEE LINK ===== */
+
+.coffee-link {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 100;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-crt-dark);
+  color: var(--color-neon-cyan);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  transition: border-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.coffee-link:hover {
+  border-color: var(--color-neon-pink);
+  color: var(--color-neon-pink);
+  box-shadow: 0 0 10px rgba(255, 42, 109, 0.3);
+  text-decoration: none;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 600px) {
+  .coffee-link {
+    position: static;
+    display: block;
+    text-align: center;
+    margin: var(--space-4) auto 0;
+    width: fit-content;
+  }
+
   .app__main {
     padding: var(--space-4) var(--space-3);
   }
