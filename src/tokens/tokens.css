@@ -1,58 +1,63 @@
 /* ===========================================
    JULIA SORTS - Design Tokens
-   90s Arcade Gaming Aesthetic
+   Pac-Man Inspired Retro with Curves
    =========================================== */
 
 :root {
   /* ===== COLOR PALETTE ===== */
 
-  /* Primary CRT Colors */
-  --color-crt-black: #0a0a0c;
-  --color-crt-dark: #12121a;
-  --color-crt-glow: #1a1a2e;
+  /* Pac-Man Core */
+  --color-bg-black: #000000;
+  --color-bg-dark: #0a0a14;
+  --color-bg-panel: #0d0d1a;
 
-  /* Neon Arcade Colors */
-  --color-neon-pink: #ff2a6d;
-  --color-neon-cyan: #05d9e8;
-  --color-neon-green: #39ff14;
-  --color-neon-yellow: #ffd700;
-  --color-neon-purple: #9d4edd;
-  --color-neon-orange: #ff6b35;
+  /* Maze Blue */
+  --color-maze-blue: #2121DE;
+  --color-maze-blue-light: #3333FF;
+  --color-maze-blue-dim: #1a1a8e;
+  --color-maze-blue-glow: rgba(33, 33, 222, 0.4);
 
-  /* Phosphor Screen Colors */
-  --color-phosphor-green: #33ff33;
-  --color-phosphor-amber: #ffb000;
+  /* Character Colors */
+  --color-pacman-yellow: #FFFF00;
+  --color-ghost-red: #FF0000;
+  --color-ghost-pink: #FFB8FF;
+  --color-ghost-cyan: #00FFDE;
+  --color-ghost-orange: #FFB852;
+
+  /* Dot Colors */
+  --color-dot-peach: #FFB897;
+  --color-dot-dim: #FFB89740;
 
   /* UI Colors */
   --color-text-primary: #ffffff;
-  --color-text-secondary: #b8b8d0;
-  --color-text-muted: #6b6b8a;
-  --color-border: #2a2a4a;
-  --color-border-glow: rgba(5, 217, 232, 0.3);
+  --color-text-secondary: #c8c8e0;
+  --color-text-muted: #5858a0;
+  --color-border: var(--color-maze-blue);
+  --color-border-dim: #1a1a6e;
+  --color-border-glow: var(--color-maze-blue-glow);
 
   /* Semantic Colors */
-  --color-success: var(--color-neon-green);
-  --color-warning: var(--color-neon-yellow);
-  --color-error: var(--color-neon-pink);
-  --color-info: var(--color-neon-cyan);
+  --color-success: #39ff14;
+  --color-warning: var(--color-pacman-yellow);
+  --color-error: var(--color-ghost-red);
+  --color-info: var(--color-ghost-cyan);
 
   /* ===== TYPOGRAPHY ===== */
 
-  /* Font Families - Using chunky, pixel-inspired fonts */
-  --font-display: 'Press Start 2P', 'VT323', monospace;
+  --font-display: 'Press Start 2P', monospace;
   --font-body: 'VT323', 'Courier New', monospace;
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
-  /* Font Sizes - 8-bit scale */
-  --text-xs: 0.625rem;    /* 10px */
-  --text-sm: 0.75rem;     /* 12px */
-  --text-base: 1rem;      /* 16px */
-  --text-lg: 1.25rem;     /* 20px */
-  --text-xl: 1.5rem;      /* 24px */
-  --text-2xl: 2rem;       /* 32px */
-  --text-3xl: 2.5rem;     /* 40px */
-  --text-4xl: 3rem;       /* 48px */
-  --text-5xl: 4rem;       /* 64px */
+  /* Font Sizes */
+  --text-xs: 0.625rem;
+  --text-sm: 0.75rem;
+  --text-base: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2rem;
+  --text-3xl: 2.5rem;
+  --text-4xl: 3rem;
+  --text-5xl: 4rem;
 
   /* Line Heights */
   --leading-tight: 1.1;
@@ -67,48 +72,50 @@
 
   /* ===== SPACING ===== */
 
-  /* 8px base grid system */
-  --space-1: 0.25rem;     /* 4px */
-  --space-2: 0.5rem;      /* 8px */
-  --space-3: 0.75rem;     /* 12px */
-  --space-4: 1rem;        /* 16px */
-  --space-5: 1.5rem;      /* 24px */
-  --space-6: 2rem;        /* 32px */
-  --space-8: 3rem;        /* 48px */
-  --space-10: 4rem;       /* 64px */
-  --space-12: 6rem;       /* 96px */
-  --space-16: 8rem;       /* 128px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-8: 3rem;
+  --space-10: 4rem;
+  --space-12: 6rem;
+  --space-16: 8rem;
 
   /* ===== BORDERS & RADIUS ===== */
 
-  /* Pixel-perfect borders */
   --border-width-thin: 2px;
   --border-width-medium: 4px;
   --border-width-thick: 6px;
 
-  /* Sharp, 90s-style corners */
-  --radius-none: 0;
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --radius-pixel: 0; /* Keep it sharp! */
+  /* Pac-Man curves - rounded but chunky */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 100px;
+  --radius-round: 50%;
 
   /* ===== SHADOWS & GLOWS ===== */
 
-  /* Neon Glow Effects */
-  --glow-pink: 0 0 10px var(--color-neon-pink), 0 0 20px var(--color-neon-pink), 0 0 40px var(--color-neon-pink);
-  --glow-cyan: 0 0 10px var(--color-neon-cyan), 0 0 20px var(--color-neon-cyan), 0 0 40px var(--color-neon-cyan);
-  --glow-green: 0 0 10px var(--color-neon-green), 0 0 20px var(--color-neon-green), 0 0 40px var(--color-neon-green);
-  --glow-yellow: 0 0 10px var(--color-neon-yellow), 0 0 20px var(--color-neon-yellow), 0 0 40px var(--color-neon-yellow);
+  /* Maze Glow Effects */
+  --glow-blue: 0 0 8px var(--color-maze-blue), 0 0 20px var(--color-maze-blue-glow);
+  --glow-yellow: 0 0 10px var(--color-pacman-yellow), 0 0 25px rgba(255, 255, 0, 0.4);
+  --glow-red: 0 0 10px var(--color-ghost-red), 0 0 25px rgba(255, 0, 0, 0.3);
+  --glow-cyan: 0 0 10px var(--color-ghost-cyan), 0 0 25px rgba(0, 255, 222, 0.3);
+  --glow-pink: 0 0 10px var(--color-ghost-pink), 0 0 25px rgba(255, 184, 255, 0.3);
+  --glow-green: 0 0 10px var(--color-success), 0 0 25px rgba(57, 255, 20, 0.3);
 
-  /* Text Glows */
-  --text-glow-cyan: 0 0 5px var(--color-neon-cyan), 0 0 10px var(--color-neon-cyan);
-  --text-glow-pink: 0 0 5px var(--color-neon-pink), 0 0 10px var(--color-neon-pink);
-  --text-glow-green: 0 0 5px var(--color-neon-green), 0 0 10px var(--color-neon-green);
+  /* Text Glows - subtle, don't blur the text */
+  --text-glow-blue: 0 0 4px var(--color-maze-blue-glow);
+  --text-glow-yellow: 0 0 4px rgba(255, 255, 0, 0.3);
+  --text-glow-cyan: 0 0 4px rgba(0, 255, 222, 0.3);
+  --text-glow-pink: 0 0 4px rgba(255, 184, 255, 0.3);
+  --text-glow-green: 0 0 4px rgba(57, 255, 20, 0.3);
 
   /* Box Shadows */
-  --shadow-pixel: 4px 4px 0 var(--color-crt-black);
-  --shadow-pixel-lg: 6px 6px 0 var(--color-crt-black);
+  --shadow-maze: 0 4px 20px rgba(33, 33, 222, 0.15);
   --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 
   /* ===== TRANSITIONS ===== */
@@ -126,17 +133,10 @@
   --z-modal: 300;
   --z-overlay: 400;
   --z-toast: 500;
-
-  /* ===== CRT EFFECT VALUES ===== */
-
-  --scanline-opacity: 0.08;
-  --crt-curve: 2px;
-  --flicker-intensity: 0.02;
 }
 
-/* Dark mode is the only mode - it's always arcade night */
 @media (prefers-color-scheme: light) {
   :root {
-    /* Override nothing - keep the dark arcade vibe */
+    /* It's always arcade night */
   }
 }

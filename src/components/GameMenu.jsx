@@ -44,12 +44,6 @@ export function GameMenu({ isOpen, onClose, title, children }) {
         aria-modal="true"
         aria-labelledby="game-menu-title"
       >
-        {/* Decorative corners */}
-        <div className="game-menu__corner game-menu__corner--tl" />
-        <div className="game-menu__corner game-menu__corner--tr" />
-        <div className="game-menu__corner game-menu__corner--bl" />
-        <div className="game-menu__corner game-menu__corner--br" />
-
         {/* Header */}
         <div className="game-menu__header">
           <h2 id="game-menu-title" className="game-menu__title">{title}</h2>
@@ -61,9 +55,6 @@ export function GameMenu({ isOpen, onClose, title, children }) {
             ESC
           </button>
         </div>
-
-        {/* Scanline effect */}
-        <div className="game-menu__scanlines" />
 
         {/* Content */}
         <div className="game-menu__content">

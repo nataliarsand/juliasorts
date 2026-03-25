@@ -99,8 +99,8 @@ function App() {
         {/* Header */}
         <header className="app__header">
           <img
-            src={`${import.meta.env.BASE_URL}images/logo.png`}
-            srcSet={`${import.meta.env.BASE_URL}images/logo.png 1x, ${import.meta.env.BASE_URL}images/logo@2x.png 2x`}
+            src={`${import.meta.env.BASE_URL}images/logo-3.png`}
+            srcSet={`${import.meta.env.BASE_URL}images/logo-3.png 1x, ${import.meta.env.BASE_URL}images/logo-3@2x.png 2x`}
             alt="Julia Sorts"
             className="app__logo"
           />
@@ -138,6 +138,7 @@ function App() {
               <ArcadeButton
                 variant="primary"
                 size="lg"
+                fullWidth
                 onClick={sort}
                 disabled={!canSort}
               >

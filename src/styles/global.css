@@ -1,6 +1,6 @@
 /* ===========================================
    JULIA SORTS - Global Styles
-   90s Arcade Gaming Aesthetic
+   Pac-Man Inspired Retro with Curves
    =========================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
@@ -20,7 +20,6 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  image-rendering: pixelated;
 }
 
 body {
@@ -28,60 +27,9 @@ body {
   font-size: var(--text-lg);
   line-height: var(--leading-normal);
   color: var(--color-text-primary);
-  background: var(--color-crt-black);
+  background: var(--color-bg-black);
   min-height: 100vh;
   overflow-x: hidden;
-}
-
-/* ===== CRT MONITOR EFFECT ===== */
-
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    transparent 50%,
-    rgba(0, 0, 0, var(--scanline-opacity)) 50%
-  );
-  background-size: 100% 4px;
-  pointer-events: none;
-  z-index: 9999;
-}
-
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    ellipse at center,
-    transparent 0%,
-    rgba(0, 0, 0, 0.3) 100%
-  );
-  pointer-events: none;
-  z-index: 9998;
-}
-
-/* CRT Flicker Animation */
-@keyframes flicker {
-  0% { opacity: 1; }
-  5% { opacity: 0.98; }
-  10% { opacity: 1; }
-  15% { opacity: 0.97; }
-  20% { opacity: 1; }
-  50% { opacity: 1; }
-  55% { opacity: 0.99; }
-  60% { opacity: 1; }
-  100% { opacity: 1; }
-}
-
-#root {
-  animation: flicker 4s infinite;
 }
 
 /* ===== TYPOGRAPHY ===== */
@@ -94,17 +42,9 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
 }
 
-h1 {
-  font-size: var(--text-3xl);
-}
-
-h2 {
-  font-size: var(--text-2xl);
-}
-
-h3 {
-  font-size: var(--text-xl);
-}
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
 
 p {
   font-family: var(--font-body);
@@ -115,49 +55,51 @@ p {
 /* ===== LINKS ===== */
 
 a {
-  color: var(--color-neon-cyan);
+  color: var(--color-ghost-cyan);
   text-decoration: none;
   transition: all var(--transition-fast);
 }
 
 a:hover {
-  color: var(--color-neon-pink);
+  color: var(--color-ghost-pink);
   text-shadow: var(--text-glow-pink);
 }
 
 /* ===== SELECTION ===== */
 
 ::selection {
-  background: var(--color-neon-pink);
-  color: var(--color-crt-black);
+  background: var(--color-maze-blue);
+  color: var(--color-pacman-yellow);
 }
 
 /* ===== SCROLLBAR ===== */
 
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-crt-dark);
-  border: 2px solid var(--color-border);
+  background: var(--color-bg-dark);
+  border-radius: var(--radius-pill);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-neon-cyan);
-  border: 2px solid var(--color-crt-dark);
+  background: var(--color-maze-blue);
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-bg-dark);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-neon-pink);
+  background: var(--color-maze-blue-light);
 }
 
 /* ===== FOCUS STYLES ===== */
 
 :focus-visible {
-  outline: 3px solid var(--color-neon-cyan);
+  outline: 3px solid var(--color-pacman-yellow);
   outline-offset: 2px;
+  border-radius: var(--radius-sm);
 }
 
 /* ===== UTILITY CLASSES ===== */
@@ -174,18 +116,6 @@ a:hover {
   border: 0;
 }
 
-.text-glow-cyan {
-  text-shadow: var(--text-glow-cyan);
-}
-
-.text-glow-pink {
-  text-shadow: var(--text-glow-pink);
-}
-
-.text-glow-green {
-  text-shadow: var(--text-glow-green);
-}
-
 /* ===== ANIMATIONS ===== */
 
 @keyframes pulse {
@@ -198,41 +128,29 @@ a:hover {
   50%, 100% { opacity: 0; }
 }
 
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
-}
-
-@keyframes rainbow {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
-}
-
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
-.animate-pulse {
-  animation: pulse 2s ease-in-out infinite;
+@keyframes dotMunch {
+  0% { clip-path: circle(50% at 50% 50%); }
+  50% { clip-path: polygon(50% 50%, 100% 0%, 100% 100%,  50% 50%, 0% 100%, 0% 0%); }
+  100% { clip-path: circle(50% at 50% 50%); }
 }
 
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
+.animate-pulse { animation: pulse 2s ease-in-out infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-float { animation: float 3s ease-in-out infinite; }
 
-.animate-glitch {
-  animation: glitch 0.3s ease-in-out infinite;
-}
+/* ===== REDUCED MOTION ===== */
 
-.animate-rainbow {
-  animation: rainbow 3s linear infinite;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -61,13 +61,7 @@ export function Spinner({ options, isSpinning, result }) {
   return (
     <div className={classNames}>
       <div className="spinner__frame">
-        <div className="spinner__corner spinner__corner--tl" />
-        <div className="spinner__corner spinner__corner--tr" />
-        <div className="spinner__corner spinner__corner--bl" />
-        <div className="spinner__corner spinner__corner--br" />
-
         <div className="spinner__screen">
-          <div className="spinner__scanlines" />
           <div className="spinner__text">{displayText}</div>
         </div>
       </div>
